@@ -8,6 +8,7 @@ namespace AudioPlayer
 {
     class Song
     {
+        //comment
         public string Title;
         public string Lyrics;
         public int Duration;
