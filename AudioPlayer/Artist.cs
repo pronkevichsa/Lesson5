@@ -13,5 +13,13 @@ namespace AudioPlayer
         public List<Song> Songs;
 
         public Album[] Albums;
+        public Artist()
+        {
+
+        }
+        public Artist(string Name)
+        {
+            this.Name = Name;
+        }
     }
 }

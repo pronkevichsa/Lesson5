@@ -14,7 +14,8 @@ namespace AudioPlayer
             Song[] song = CreateSongs();
 
             player.songs = song.ToList<Song>();
-
+            player.Add(song[0]);
+            player.Play(out song[0]);
             foreach (Song currentSong in player.songs)
             {
                 Console.WriteLine(currentSong.Lyrics);

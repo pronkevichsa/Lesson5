@@ -24,10 +24,13 @@ namespace AudioPlayer
             Locked = false;
         }
 
-        public void Play()
+        public bool Play(out Song playingSong)
         {
+            
             if (this.Locked == false) this.IsPlaying = true;
             if (PlayingSong == null) PlayingSong = songs[0];
+            playingSong = PlayingSong;
+            return true;
         }
 
         public void Stop()
@@ -37,6 +40,13 @@ namespace AudioPlayer
                 IsPlaying = false;
             }
         }
+
+        public bool Stop(out Song playingSong)
+        {
+            playingSong = null;
+            return true;
+        }
+
         public int Volume
         {
             get
@@ -83,7 +93,10 @@ namespace AudioPlayer
         {
             this.songs = artist.Songs;
         }
-
+        public void Add(Album album)
+        {
+            this.songs = album.Songs;
+        }
 
     }
 }

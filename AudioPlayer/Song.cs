@@ -13,7 +13,14 @@ namespace AudioPlayer
         public string Lyrics;
         public int Duration;
         public Artist Artist; 
-        public Album Album;             
+        public Album Album;
+
+        public Song(string title = "First", string lirycs = "none", int duration = 0)
+        {
+            this.Title = title;
+            this.Lyrics = lirycs;
+            this.Duration = duration;
+        }
 
         //public System.Nullable<bool> Like { get; set; }        
     }
