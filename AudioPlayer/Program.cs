@@ -11,16 +11,23 @@ namespace AudioPlayer
         static void Main(string[] args)
         {
             var player = new AudioPlayer();
+
             Song[] song = CreateSongs();
 
             player.songs = song.ToList<Song>();
+
+            player.SortByTitle();
             player.Add(song[0]);
             player.Play(out song[0]);
             foreach (Song currentSong in player.songs)
             {
                 Console.WriteLine(currentSong.Lyrics);
             }
-
+            player.Shuffle();
+            foreach (Song currentSong in player.songs)
+            {
+                Console.WriteLine(currentSong.Lyrics);
+            }
             Console.ReadLine();
         }
 
